@@ -35,6 +35,8 @@ Serves on port 80.
  - [Install generic webhook pluggin for branch layer trigger of build](https://plugins.jenkins.io/generic-webhook-trigger/) - This is to run build from the **development branch** to **staging branch** to **production branch** 
  - [Create a Jenkins job and use webhook](https://plugins.jenkins.io/generic-webhook-trigger/)
  - Setup Visudo permission for Jenkins to work on the server effectively
+ - Setup kube config for Kubernetes by add credentials in kubernetes and adding it to pipeline 
+ - Setup dockerhub credentials in the Jenkins credentials and add ID to pipeline
  
 ## Docker Level Architecture
 ```
