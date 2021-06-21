@@ -31,7 +31,7 @@ Serves on port 80.
  
  [![Screenshot of CI/CD pipeline](./Architecture/CI_CD_Pipeline.png)](./Architecture/CI_CD_Pipeline.png) 
  
- - Setup branches to restrict push to **staging** and **production** branch so that code can only from **development branch** to **staging branch** to **production branch** in the exact order
+ - [Setup branching protection rule  to restrict push to **staging** and **production** branch so that code can only from **development branch** to **staging branch** to **production branch** in the exact order](https://github.com/danade002/http_server/settings/branch_protection_rules/new)
  - [Install generic webhook pluggin for branch layer trigger of build](https://plugins.jenkins.io/generic-webhook-trigger/) - This is to run build from the **development branch** to **staging branch** to **production branch** 
  - [Create a Jenkins job and use webhook](https://plugins.jenkins.io/generic-webhook-trigger/)
  - Setup Visudo permission for Jenkins to work on the server effectively
