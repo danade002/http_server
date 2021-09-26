@@ -16,7 +16,7 @@ pipeline {
                     $class: 'GitSCM',
                     branches: [[ name: "*/$BRANCH" ]],
                     userRemoteConfigs: [[ 
-                        credentialsId: 'adjust-test',
+                        credentialsId: 'test',
                         url: 'git@github.com:danade002/http_server.git'
                     ]]
                     
@@ -38,11 +38,11 @@ pipeline {
                 _sh """
                 ls -la
                 echo "built image"
-                docker build . -t danielademeso/adjusttest:${BUILD_NUMBER} 
+                docker build . -t danielademeso/test:${BUILD_NUMBER} 
                 docker login -u ${env.dockerHubUser} -p ${env.dockerHubPassword}
                 
                 echo "pushed image"
-                docker rmi danielademeso/adjusttest:$BUILD_NUMBER
+                docker rmi danielademeso/test:$BUILD_NUMBER
                 echo "removed image"
 		docker system prune -f 
 		echo "removed possible dangling image"
@@ -60,7 +60,7 @@ pipeline {
             steps {
                     _sh """
                   
-		    kubectl --kubeconfig=${KUBECONFIG}  --namespace=$ENVIRONMENT set image deployment/http-server http-server=danielademeso/adjusttest:${BUILD_NUMBER}
+		    kubectl --kubeconfig=${KUBECONFIG}  --namespace=$ENVIRONMENT set image deployment/http-server http-server=danielademeso/test:${BUILD_NUMBER}
                     """
                 
             }
