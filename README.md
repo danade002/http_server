@@ -15,6 +15,8 @@ Serves on port 80.
 
 ## Overall Architecture of the deployment
 
+
+- The deployment can either use kubernetes yaml file or helm chart
 - Code move from GitHub to Jenkins which is deposited in the Ubuntu Virtual Machine I spinned up
 - Code get into Jenkins automatically by setting up webhook in Jenkins and notifying GitHub to activate webhook
 - To setup webhook in GitHub, go to (url of the repo)/settings/hooks then add webhook.
