@@ -23,7 +23,7 @@ spec:
     spec:
       containers:
       - name: http-server
-        image: danielademeso/adjusttest:latest
+        image: danielademeso/covid:latest
         ports:
         - containerPort: 80
 ---
